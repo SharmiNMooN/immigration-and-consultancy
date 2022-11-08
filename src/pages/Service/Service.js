@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Service = ({ service }) => {
   console.log(service);
   return (
-    <Card className="mb-5" border="warning">
+    <Card className="mb-2" border="warning">
       <Card.Body>
         <Card.Title>{service.name}</Card.Title>
         <Card.Img
