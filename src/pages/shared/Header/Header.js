@@ -47,13 +47,20 @@ const Header = () => {
                 </Link>
               </Nav.Link>
             </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="/my-reviews">
-                <Link className=" text-dark" to="/my-reviews">
-                  My Reviews
-                </Link>
-              </Nav.Link>
-            </Nav.Item>
+            <>
+              {user?.uid ? (
+                <Nav.Item>
+                  <Nav.Link eventKey="/my-reviews">
+                    <Link className=" text-dark" to="/my-reviews">
+                      My Reviews
+                    </Link>
+                  </Nav.Link>
+                </Nav.Item>
+              ) : (
+                ""
+              )}
+            </>
+
             <Nav.Item>
               <Nav.Link eventKey="/blog">
                 <Link className=" text-dark" to="/blog">

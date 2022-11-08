@@ -9,8 +9,7 @@ import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 const Register = () => {
   const [error, setError] = useState("");
   const [accepted, setAccepted] = useState(false);
-  const { createUser, updateUserProfile, verifyEmail } =
-    useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,12 +22,33 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        console.log(`Successfully registered`, user);
         setError("");
         form.reset();
         handleUpdateUserProfile(name, photoURL);
 
-        toast.success("Successfully registered");
+        const payload = {
+          email: user.email,
+          name: name,
+          image: photoURL,
+        };
+        console.log({ payload, user });
+        fetch(`${process.env.REACT_APP_SERVER_BASEURL}/users/register`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log({ data, result });
+            toast.success("Successfully registered");
+          })
+          .catch((error) => {
+            console.log(error);
+            setError(error.message);
+          });
       })
       .catch((e) => {
         console.error(e);
