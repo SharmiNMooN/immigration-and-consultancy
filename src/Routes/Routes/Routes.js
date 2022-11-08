@@ -3,8 +3,10 @@ import Main from "../../layout/Main";
 import Login from "../../pages/Auth/Login/Login";
 import Register from "../../pages/Auth/Register/Register";
 import Home from "../../pages/Home/Home";
+import MyReview from "../../pages/MyReview/MyReview";
 import ServiceDetails from "../../pages/ServiceDetails/ServiceDetails";
 import Services from "../../pages/Services/Services";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
   {
@@ -35,6 +37,15 @@ export const routes = createBrowserRouter([
             `${process.env.REACT_APP_SERVER_BASEURL}/services/${params.serviceId}`
           ),
       },
+      {
+        path: "/my-reviews",
+        element: <MyReview></MyReview>,
+        // loader: ({ params }) =>
+        //   fetch(
+        //     `${process.env.REACT_APP_SERVER_BASEURL}/reviews/get-review-by-user/${params.userId}`
+        //   ),
+      },
+
       {
         path: "/login",
         element: <Login></Login>,

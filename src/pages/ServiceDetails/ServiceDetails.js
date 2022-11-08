@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Col, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { useLoaderData } from "react-router-dom";
 import Review from "../Review/Review";
-
+import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 const ServiceDetails = () => {
   const { data } = useLoaderData();
   const { service, reviews } = data;
+  const { user } = useContext(AuthContext);
   console.log({ service, reviews });
   return (
     <Row>
@@ -27,10 +28,15 @@ const ServiceDetails = () => {
       <h4 className="text-dark mt-2"> Review of the service:</h4>
 
       {reviews.map((review, index) => (
-        // <Col className="m-auto" sx={12} sm={12} md={6} lg={5}>
         <Review review={review} key={index}></Review>
-        // </Col>
       ))}
+      {user?.uid ? (
+        <div>
+          <h5>Review from here</h5>
+        </div>
+      ) : (
+        <p>Please login to add a review</p>
+      )}
     </Row>
   );
 };
