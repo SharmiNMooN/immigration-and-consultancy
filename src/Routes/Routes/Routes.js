@@ -3,6 +3,8 @@ import Main from "../../layout/Main";
 import Login from "../../pages/Auth/Login/Login";
 import Register from "../../pages/Auth/Register/Register";
 import Home from "../../pages/Home/Home";
+import ServiceDetails from "../../pages/ServiceDetails/ServiceDetails";
+import Services from "../../pages/Services/Services";
 
 export const routes = createBrowserRouter([
   {
@@ -15,6 +17,22 @@ export const routes = createBrowserRouter([
         loader: () =>
           fetch(
             `${process.env.REACT_APP_SERVER_BASEURL}/services?page=1&limit=3`
+          ),
+      },
+      {
+        path: "/services",
+        element: <Services></Services>,
+        loader: () =>
+          fetch(
+            `${process.env.REACT_APP_SERVER_BASEURL}/services?page=1&limit=6`
+          ),
+      },
+      {
+        path: "/services/:serviceId",
+        element: <ServiceDetails></ServiceDetails>,
+        loader: ({ params }) =>
+          fetch(
+            `${process.env.REACT_APP_SERVER_BASEURL}/services/${params.serviceId}`
           ),
       },
       {

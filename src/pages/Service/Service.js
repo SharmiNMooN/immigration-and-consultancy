@@ -2,8 +2,8 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
-const Service = ({ service }) => {
-  console.log(service);
+const Service = ({ service, isDetails = false }) => {
+  console.log(service, isDetails);
   return (
     <Card className="mb-2" border="warning">
       <Card.Body>
@@ -23,6 +23,13 @@ const Service = ({ service }) => {
             service.description
           )}
         </Card.Text>
+        {isDetails === true ? (
+          <Link className="btn btn-warning" to={`/services/${service._id}`}>
+            View details
+          </Link>
+        ) : (
+          ""
+        )}
       </Card.Body>
       <Card.Footer className="d-flex justify-content-between">
         <div>Price: {service.price}/- tk</div>

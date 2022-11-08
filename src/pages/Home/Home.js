@@ -29,10 +29,14 @@ const Home = () => {
           </Card>
         </Col>
         <Col sx={12} sm={12} md={6} lg={6}>
-          <h3 className="text-center text-info fw-bolder">OUR SERVICES</h3>
-          {AllServices.map((service) => (
+          <h3 className="text-center text-info fw-bolder">MY SERVICES</h3>
+          {AllServices.map((service, index) => (
             <Col sx={12} sm={12} md={12} lg={12}>
-              <Service key={service._id} service={service}></Service>
+              <Service
+                key={index}
+                service={service}
+                isDetails={false}
+              ></Service>
             </Col>
           ))}
           <Link className="btn btn-dark" to="/services">
