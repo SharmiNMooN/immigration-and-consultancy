@@ -4,6 +4,7 @@ import Login from "../../pages/Auth/Login/Login";
 import Register from "../../pages/Auth/Register/Register";
 import Home from "../../pages/Home/Home";
 import Blog from "../../pages/Blog/Blog";
+import NotFound from "../../pages/NotFound";
 import MyReview from "../../pages/MyReview/MyReview";
 import ServiceDetails from "../../pages/ServiceDetails/ServiceDetails";
 import Services from "../../pages/Services/Services";
@@ -58,6 +59,10 @@ export const routes = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "*",
+        element: <NotFound></NotFound>,
       },
     ],
   },
