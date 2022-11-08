@@ -32,7 +32,7 @@ const Service = ({ service, isDetails = false }) => {
         )}
       </Card.Body>
       <Card.Footer className="d-flex justify-content-between">
-        <div>Price: {service.price}/- tk</div>
+        Price: {service.price}/- tk
       </Card.Footer>
     </Card>
   );
