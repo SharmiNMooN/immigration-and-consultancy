@@ -15,7 +15,9 @@ const Header = () => {
   const [currentState, setCurrentState] = useState("");
   const handleLogOut = () => {
     logOut()
-      .then(() => {})
+      .then(() => {
+        localStorage.clear("token");
+      })
       .catch((error) => console.error(error));
   };
   useEffect(() => {

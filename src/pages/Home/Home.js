@@ -14,7 +14,7 @@ const Home = () => {
         <Col sx={12} sm={12} md={3} lg={3}>
           <Card className="mb-5" border="warning">
             <Card.Body>
-              <Card.Title>Contact Us</Card.Title>
+              <Card.Title>Contact with me</Card.Title>
 
               <Card.Text>
                 Address: Mirpur 2, Dhaka 1216 <br /> Contact number: 000-111-222{" "}
@@ -42,7 +42,7 @@ const Home = () => {
         <Col sx={12} sm={12} md={3} lg={3}>
           <Card className="mb-5" border="warning">
             <Card.Body>
-              <Card.Title>Who we are</Card.Title>
+              <Card.Title>About my service</Card.Title>
 
               <Card.Text>
                 Immigration and COnsultancy is an international consultancy
