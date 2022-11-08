@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Col, Image, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import { FaStar } from "react-icons/fa";
+import { FaEdit, FaStar, FaTrash } from "react-icons/fa";
 
 const MyReview = () => {
   const [reviewes, setReviewes] = useState();
@@ -42,13 +42,18 @@ const MyReview = () => {
                   <p className="mb-0">{review?.reviewerName}</p>
                 </div>
               </div>
+
               <div>
-                Rating: <FaStar className="text-warning me-2"></FaStar>
-                <span>{review?.rating || "N/A"}</span>
+                <FaEdit className="me-2"></FaEdit>
+                <FaTrash className="me-2"></FaTrash>
               </div>
             </Card.Header>
             <Card.Body>
               <Card.Text>{review.description}</Card.Text>
+              <div>
+                Rating: <FaStar className="text-warning me-2"></FaStar>
+                <span>{review?.rating || "N/A"}</span>
+              </div>
             </Card.Body>
           </Card>
         </Col>
