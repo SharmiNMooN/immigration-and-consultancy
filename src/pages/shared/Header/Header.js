@@ -5,11 +5,19 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { FaUser, FaFlagCheckered } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import ReactTooltip from "react-tooltip";
+import Button from "react-bootstrap/Button";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
   const location = useLocation();
   const [currentState, setCurrentState] = useState("");
-
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
   useEffect(() => {
     setCurrentState(location.pathname);
     console.log({ currentState });
@@ -55,7 +63,45 @@ const Header = () => {
             </Nav.Item>
           </Nav>
           <Nav>
-            <></>
+            <>
+              {user?.uid ? (
+                <>
+                  <Link to="/" className="me-2">
+                    {user?.photoURL ? (
+                      <Image
+                        style={{ height: "30px" }}
+                        data-tip={user?.displayName}
+                        roundedCircle
+                        src={user?.photoURL}
+                      ></Image>
+                    ) : (
+                      <FaUser></FaUser>
+                    )}
+                  </Link>
+                  <ReactTooltip />
+                  <Button variant="light" onClick={handleLogOut}>
+                    Log out
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    className={`me-2 ${
+                      currentState === "/login" ? "d-none" : ""
+                    }`}
+                    to="/login"
+                  >
+                    Login
+                  </Link>
+                  <Link
+                    className={`${currentState === "/login" ? "" : "d-none"}`}
+                    to="/register"
+                  >
+                    Register
+                  </Link>
+                </>
+              )}
+            </>
           </Nav>
         </Navbar.Collapse>
       </Container>
