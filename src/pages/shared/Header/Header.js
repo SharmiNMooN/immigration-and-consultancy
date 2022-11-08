@@ -3,7 +3,7 @@ import { Image } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { FaUser, FaCogs, FaFlagCheckered } from "react-icons/fa";
+import { FaUser, FaFlagCheckered } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
