@@ -9,39 +9,29 @@ const Blog = () => {
         </div>
         <div className="card-body">
           <h5 className="card-title">Ans:</h5>
+          <b>SQL:</b>
+          RELATIONAL DATABASE MANAGEMENT SYSTEM (RDBMS).
           <p className="card-text">
-            <b>SQL:</b>.
-            <br />
-            RELATIONAL DATABASE MANAGEMENT SYSTEM (RDBMS).
-            <br />
-            These databases have fixed or static or predefined schema.
+            1. These databases have fixed or static or predefined schema.
           </p>
-          <br />
-          These databases are not suited for hierarchical data storage.
-          <br />
-          These databases are best suited for complex queries.
-          <br />
-          Vertically Scalable.
-          <br />
-          Follows ACID property
-          <br />
-          Examples: MySQL, PostgreSQL, Oracle, MS-SQL Server etc.
+          <p>
+            2. These databases are not suited for hierarchical data storage.
+          </p>
+          <p>3. These databases are best suited for complex queries.</p>
+          <p>4. Vertically Scalable.</p>
+          <p>5. Follows ACID property</p>
+          <p>6. Examples: MySQL, PostgreSQL, Oracle, MS-SQL Server etc.</p>
           <br />
           <b>NoSQL:</b>
-          <br />
           Non-relational or distributed database system.
-          <br />
-          They have dynamic schema.
-          <br />
-          These databases are best suited for hierarchical data storage.
-          <br />
-          These databases are not so good for complex queries.
-          <br />
-          Horizontally scalable.
-          <br />
-          Follows CAP(consistency, availability, partition tolerance).
-          <br />
-          Examples: MongoDB, GraphQL, HBase, Neo4j, Cassandra etc.
+          <p>1. They have dynamic schema.</p>
+          <p>
+            2. These databases are best suited for hierarchical data storage.
+          </p>
+          <p>3. These databases are not so good for complex queries.</p>
+          <p>4. Horizontally scalable.</p>
+          <p>5. Follows CAP(consistency, availability, partition tolerance).</p>
+          <p>6. Examples: MongoDB, GraphQL, HBase, Neo4j, Cassandra etc.</p>
         </div>
       </div>
 
@@ -101,19 +91,42 @@ const Blog = () => {
         </div>
         <div className="card-body">
           <h5 className="card-title">Ans:</h5>
-          <p className="card-text">
-            <b> javaScript:</b>
+          <div className="card-text">
+            <b> JavaScript:</b>
+            Javascript is a Scripting language. It is mostly abbreviated as JS.
+            It can be said that Javascript is the updated version of the ECMA
+            script. Javascript is a high-level programming language that uses
+            the concept of Oops but it is based on prototype inheritance.
+            <br />
+            <p>
+              1. Javascript is a programming language that is used for writing
+              scripts on the website.
+            </p>
+            <p>2. Javascript can only be run in the browsers. </p>
+            <p>3. It is basically used on the client-side. </p>
+            <p>
+              4. Javascript is capable enough to add HTML and play with the DOM.
+            </p>
+            <p>5. Javascript is used in frontend development. </p>
+            <br />
+            <b>NodeJS:</b>
             NodeJS is a cross-platform and opensource Javascript runtime
             environment that allows the javascript to be run on the server-side.
             Nodejs allows Javascript code to run outside the browser. Nodejs
             comes with a lot of modules and mostly used in web development.
             <br />
-            <b>NodeJS:</b>
-            Javascript is a Scripting language. It is mostly abbreviated as JS.
-            It can be said that Javascript is the updated version of the ECMA
-            script. Javascript is a high-level programming language that uses
-            the concept of Oops but it is based on prototype inheritance.
-          </p>
+            <p>
+              1. We can run Javascript outside the browser with the help of
+              NodeJS.
+            </p>
+            <p>2. It is mostly used on the server-side.</p>
+            <p>3. Nodejs does not have capability to add HTML tags.</p>
+            <p>
+              4. V8 is the Javascript engine inside of node.js that parses and
+              runs Javascript.
+            </p>
+            <p>5. Nodejs is used in server-side development.</p>
+          </div>
         </div>
       </div>
       <div className="card mb-3">
