@@ -6,7 +6,6 @@ const Home = () => {
   document.title = "Services";
 
   const { data: AllServices } = useLoaderData();
-  console.log(AllServices);
   return (
     <div>
       <Row>

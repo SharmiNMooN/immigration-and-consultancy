@@ -33,13 +33,7 @@ const Home = () => {
         <Col sx={12} sm={12} md={6} lg={6}>
           <h3 className="text-center text-info fw-bolder">MY SERVICES</h3>
           {AllServices.map((service, index) => (
-            <Col sx={12} sm={12} md={12} lg={12}>
-              <Service
-                key={index}
-                service={service}
-                isDetails={false}
-              ></Service>
-            </Col>
+            <Service key={index} service={service} isDetails={false}></Service>
           ))}
           <Link className="btn btn-dark" to="/services">
             See all services
