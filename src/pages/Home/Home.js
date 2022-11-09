@@ -5,6 +5,8 @@ import Service from "../Service/Service";
 import Slider from "../shared/Slider/Slider";
 import Card from "react-bootstrap/Card";
 const Home = () => {
+  document.title = "Home";
+
   const { data: AllServices } = useLoaderData();
   console.log(AllServices);
   return (

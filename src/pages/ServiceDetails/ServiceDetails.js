@@ -6,6 +6,8 @@ import Review from "../Review/Review";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import AddReview from "../AddReview/AddReview";
 const ServiceDetails = () => {
+  document.title = "Service Details";
+
   const { data } = useLoaderData();
   const { service, reviews } = data;
   const { user } = useContext(AuthContext);

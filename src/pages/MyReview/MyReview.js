@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 import { FaEdit, FaStar, FaTrash } from "react-icons/fa";
 import toast from "react-hot-toast";
 const MyReview = () => {
+  document.title = "My Reviews";
   const [reviewes, setReviewes] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const token = localStorage.getItem("token");

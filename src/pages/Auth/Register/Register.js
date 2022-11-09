@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Register = () => {
+  document.title = "Registration";
+
   const [error, setError] = useState("");
   const [accepted, setAccepted] = useState(false);
   const { createUser, updateUserProfile } = useContext(AuthContext);

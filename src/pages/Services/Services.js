@@ -3,6 +3,8 @@ import { useLoaderData } from "react-router-dom";
 import { Col, Row } from "react-bootstrap";
 import Service from "../Service/Service";
 const Home = () => {
+  document.title = "Services";
+
   const { data: AllServices } = useLoaderData();
   console.log(AllServices);
   return (

@@ -1,4 +1,6 @@
 const Blog = () => {
+  document.title = "Blog";
+
   return (
     <div className="container bg-light  mt-4 ">
       <div className="card mb-3">

@@ -8,6 +8,8 @@ import { GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const Login = () => {
+  document.title = "Login";
+
   const [error, setError] = useState("");
   const { signIn, setLoading } = useContext(AuthContext);
   const navigate = useNavigate();

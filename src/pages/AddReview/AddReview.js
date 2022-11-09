@@ -31,9 +31,7 @@ const AddReview = ({ serviceId }) => {
         console.error(error);
         setError(error.message);
       })
-      .finally(() => {
-        // setLoading(false);
-      });
+      .finally(() => {});
   };
   return (
     <div className="mt-2">
