@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Col, Image, Row, Spinner } from "react-bootstrap";
-import Card from "react-bootstrap/Card";
-import { FaEdit, FaStar, FaTrash } from "react-icons/fa";
+import { Col, Row, Spinner } from "react-bootstrap";
 import toast from "react-hot-toast";
+import MyReviewCard from "../MyReviewCard/MyReviewCard";
 const MyReview = () => {
   document.title = "My Reviews";
   const [reviewes, setReviewes] = useState([]);
@@ -78,46 +77,12 @@ const MyReview = () => {
             <h5 className="text-center">No reviews were added</h5>
           </Col>
         ) : (
-          reviewes?.map((review) => (
-            <Col className="m-auto" sx={12} sm={12} md={6} lg={6}>
-              <Card className="mb-2">
-                <Card.Header className="d-flex justify-content-between align-items-center">
-                  <div className="d-flex">
-                    <Image
-                      roundedCircle
-                      className="me-2"
-                      src={review?.reviewerImage}
-                      style={{ height: "60px" }}
-                    ></Image>
-                    <div>
-                      <p className="mb-0 fw-bolder">
-                        Reviewer: {review?.reviewerName}
-                      </p>
-                      <Card.Text className="fw-bold">
-                        Service: {review.serviceName}
-                      </Card.Text>
-                    </div>
-                  </div>
-
-                  <div>
-                    <FaEdit className="me-2 text-success"></FaEdit>
-                    <FaTrash
-                      className="me-2 text-danger"
-                      onClick={() => {
-                        removeReview(review._id);
-                      }}
-                    ></FaTrash>
-                  </div>
-                </Card.Header>
-                <Card.Body>
-                  <Card.Text>Review: {review.description}</Card.Text>
-                  <div>
-                    Rating: <FaStar className="text-warning me-2"></FaStar>
-                    <span>{review?.rating || "N/A"}</span>
-                  </div>
-                </Card.Body>
-              </Card>
-            </Col>
+          reviewes?.map((review, index) => (
+            <MyReviewCard
+              review={review}
+              key={index}
+              removeReview={removeReview}
+            ></MyReviewCard>
           ))
         )}
       </Row>

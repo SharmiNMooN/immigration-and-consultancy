@@ -22,7 +22,7 @@ const Header = () => {
   };
   useEffect(() => {
     setCurrentState(location.pathname);
-    console.log({ currentState });
+    // console.log({ currentState });
   });
   return (
     <Navbar
