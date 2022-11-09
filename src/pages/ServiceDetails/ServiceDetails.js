@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
 import { Col, Row } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLocation, useLoaderData } from "react-router-dom";
 import Review from "../Review/Review";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 const ServiceDetails = () => {
   const { data } = useLoaderData();
   const { service, reviews } = data;
   const { user } = useContext(AuthContext);
+  const location = useLocation();
   console.log({ service, reviews });
   return (
     <Row>
@@ -35,7 +36,9 @@ const ServiceDetails = () => {
           <h5>Review from here</h5>
         </div>
       ) : (
-        <p>Please login to add a review</p>
+        <Link to="/login" state={{ from: location }}>
+          Please login to add a review
+        </Link>
       )}
     </Row>
   );

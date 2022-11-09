@@ -9,6 +9,7 @@ import MyReview from "../../pages/MyReview/MyReview";
 import ServiceDetails from "../../pages/ServiceDetails/ServiceDetails";
 import Services from "../../pages/Services/Services";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import AddService from "../../pages/AddService/AddService";
 
 export const routes = createBrowserRouter([
   {
@@ -42,10 +43,10 @@ export const routes = createBrowserRouter([
       {
         path: "/my-reviews",
         element: <MyReview></MyReview>,
-        // loader: ({ params }) =>
-        //   fetch(
-        //     `${process.env.REACT_APP_SERVER_BASEURL}/reviews/get-review-by-user/${params.userId}`
-        //   ),
+      },
+      {
+        path: "/add-service",
+        element: <AddService></AddService>,
       },
 
       {

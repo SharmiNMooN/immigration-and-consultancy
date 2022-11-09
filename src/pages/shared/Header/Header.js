@@ -62,6 +62,19 @@ const Header = () => {
                 ""
               )}
             </>
+            <>
+              {user?.uid ? (
+                <Nav.Item>
+                  <Nav.Link eventKey="/add-service">
+                    <Link className=" text-dark" to="/add-service">
+                      Add service
+                    </Link>
+                  </Nav.Link>
+                </Nav.Item>
+              ) : (
+                ""
+              )}
+            </>
 
             <Nav.Item>
               <Nav.Link eventKey="/blog">
