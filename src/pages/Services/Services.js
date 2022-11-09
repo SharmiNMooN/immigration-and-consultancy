@@ -10,7 +10,7 @@ const Services = () => {
   const [page, setPage] = useState(1);
   async function loadServices(page = 1) {
     setIsLoading(true);
-    const url = `${process.env.REACT_APP_SERVER_BASEURL}/services?page=${page}&limit=2`;
+    const url = `${process.env.REACT_APP_SERVER_BASEURL}/services?page=${page}&limit=4`;
     fetch(url, {
       method: "GET",
       headers: {

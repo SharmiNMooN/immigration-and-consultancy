@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import MovingText from "react-moving-text";
 import Carousel from "react-bootstrap/Carousel";
 

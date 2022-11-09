@@ -8,7 +8,6 @@ import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import ReactTooltip from "react-tooltip";
 import Button from "react-bootstrap/Button";
-
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const location = useLocation();
