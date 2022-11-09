@@ -42,11 +42,20 @@ export const routes = createBrowserRouter([
       },
       {
         path: "/my-reviews",
-        element: <MyReview></MyReview>,
+
+        element: (
+          <PrivateRoute>
+            <MyReview></MyReview>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/add-service",
-        element: <AddService></AddService>,
+        element: (
+          <PrivateRoute>
+            <AddService></AddService>
+          </PrivateRoute>
+        ),
       },
 
       {
