@@ -27,10 +27,6 @@ export const routes = createBrowserRouter([
       {
         path: "/services",
         element: <Services></Services>,
-        loader: () =>
-          fetch(
-            `${process.env.REACT_APP_SERVER_BASEURL}/services?page=1&limit=6`
-          ),
       },
       {
         path: "/services/:serviceId",
