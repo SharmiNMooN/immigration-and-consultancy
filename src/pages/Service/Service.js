@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import { PhotoProvider, PhotoView } from "react-photo-view";
 
 const Service = ({ service, isDetails = false }) => {
   console.log(service, isDetails);
@@ -8,11 +9,16 @@ const Service = ({ service, isDetails = false }) => {
     <Card className="mb-2" border="warning">
       <Card.Body>
         <Card.Title>{service.name}</Card.Title>
-        <Card.Img
-          variant="top"
-          style={{ maxHeight: "200px" }}
-          src={service.image}
-        />
+        <PhotoProvider>
+          <PhotoView src={service.image}>
+            <Card.Img
+              variant="top"
+              style={{ maxHeight: "200px" }}
+              src={service.image}
+            />
+          </PhotoView>
+        </PhotoProvider>
+
         <Card.Text>
           {service.description.length > 100 ? (
             <>

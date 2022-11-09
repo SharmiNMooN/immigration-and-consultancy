@@ -27,37 +27,43 @@ const MyReview = () => {
   }, []);
   return (
     <Row>
-      {reviewes?.map((review) => (
+      {reviewes?.length < 1 ? (
         <Col className="m-auto" sx={12} sm={12} md={6} lg={6}>
-          <Card className="mb-2">
-            <Card.Header className="d-flex justify-content-between align-items-center">
-              <div className="d-flex">
-                <Image
-                  roundedCircle
-                  className="me-2"
-                  src={review?.reviewerImage}
-                  style={{ height: "60px" }}
-                ></Image>
-                <div>
-                  <p className="mb-0">{review?.reviewerName}</p>
-                </div>
-              </div>
-
-              <div>
-                <FaEdit className="me-2"></FaEdit>
-                <FaTrash className="me-2"></FaTrash>
-              </div>
-            </Card.Header>
-            <Card.Body>
-              <Card.Text>{review.description}</Card.Text>
-              <div>
-                Rating: <FaStar className="text-warning me-2"></FaStar>
-                <span>{review?.rating || "N/A"}</span>
-              </div>
-            </Card.Body>
-          </Card>
+          <h5 className="text-center">No reviews were added</h5>
         </Col>
-      ))}
+      ) : (
+        reviewes?.map((review) => (
+          <Col className="m-auto" sx={12} sm={12} md={6} lg={6}>
+            <Card className="mb-2">
+              <Card.Header className="d-flex justify-content-between align-items-center">
+                <div className="d-flex">
+                  <Image
+                    roundedCircle
+                    className="me-2"
+                    src={review?.reviewerImage}
+                    style={{ height: "60px" }}
+                  ></Image>
+                  <div>
+                    <p className="mb-0">{review?.reviewerName}</p>
+                  </div>
+                </div>
+
+                <div>
+                  <FaEdit className="me-2 text-success"></FaEdit>
+                  <FaTrash className="me-2 text-danger"></FaTrash>
+                </div>
+              </Card.Header>
+              <Card.Body>
+                <Card.Text>{review.description}</Card.Text>
+                <div>
+                  Rating: <FaStar className="text-warning me-2"></FaStar>
+                  <span>{review?.rating || "N/A"}</span>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))
+      )}
     </Row>
   );
 };
