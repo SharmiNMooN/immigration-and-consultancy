@@ -76,7 +76,7 @@ const Login = () => {
         navigate(from, { replace: true });
         const user = result.user;
         console.log({
-          context: "google",
+          context: "github",
           user,
           email: user.email,
           image: user.photoURL,
