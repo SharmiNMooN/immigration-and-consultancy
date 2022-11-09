@@ -4,12 +4,12 @@ import Card from "react-bootstrap/Card";
 import { Link, useLocation, useLoaderData } from "react-router-dom";
 import Review from "../Review/Review";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import AddReview from "../AddReview/AddReview";
 const ServiceDetails = () => {
   const { data } = useLoaderData();
   const { service, reviews } = data;
   const { user } = useContext(AuthContext);
   const location = useLocation();
-  console.log({ service, reviews });
   return (
     <Row>
       <Col className="m-auto" sx={12} sm={12} md={12} lg={12}>
@@ -27,14 +27,16 @@ const ServiceDetails = () => {
         </Card>
       </Col>
       <h4 className="text-dark mt-2"> Review of the service:</h4>
+      {reviews.length < 1 ? (
+        <h6>No reviews found for this service</h6>
+      ) : (
+        reviews.map((review, index) => (
+          <Review review={review} key={index}></Review>
+        ))
+      )}
 
-      {reviews.map((review, index) => (
-        <Review review={review} key={index}></Review>
-      ))}
       {user?.uid ? (
-        <div>
-          <h5>Review from here</h5>
-        </div>
+        <AddReview serviceId={service._id}></AddReview>
       ) : (
         <Link to="/login" state={{ from: location }}>
           Please login to add a review

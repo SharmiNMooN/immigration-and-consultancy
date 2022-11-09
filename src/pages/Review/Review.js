@@ -20,12 +20,16 @@ const Review = ({ review }) => {
             </div>
           </div>
           <div>
-            Rating: <FaStar className="text-warning me-2"></FaStar>
-            <span>{review?.rating || "N/A"}</span>
+            Date:{" "}
+            <span>{new Date(review?.createdAt).toLocaleDateString()}</span>
           </div>
         </Card.Header>
         <Card.Body>
           <Card.Text>{review.description}</Card.Text>
+          <div>
+            Rating: <FaStar className="text-warning me-2"></FaStar>
+            <span>{review?.rating || "N/A"}</span>
+          </div>
         </Card.Body>
       </Card>
     </Col>
