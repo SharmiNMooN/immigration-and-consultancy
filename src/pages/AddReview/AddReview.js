@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
 
-const AddReview = ({ serviceId }) => {
+const AddReview = ({ serviceId, getServiceDetails }) => {
   const [error, setError] = useState("");
 
   const handleSubmit = (event) => {
@@ -24,6 +24,7 @@ const AddReview = ({ serviceId }) => {
       .then((res) => res.json())
       .then((result) => {
         console.log(`review added...`, result);
+        getServiceDetails();
         setError("");
         form.reset();
       })
@@ -39,7 +40,7 @@ const AddReview = ({ serviceId }) => {
 
       <Form onSubmit={handleSubmit} className="w-50 w-sm-100">
         <>
-          <FloatingLabel controlId="floatingTextarea2" label="Review">
+          <FloatingLabel controlId="floatingTextarea2" label="">
             <Form.Control
               as="textarea"
               name="review"

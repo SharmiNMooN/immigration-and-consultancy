@@ -4,7 +4,7 @@ import Login from "../../pages/Auth/Login/Login";
 import Register from "../../pages/Auth/Register/Register";
 import Home from "../../pages/Home/Home";
 import Blog from "../../pages/Blog/Blog";
-import NotFound from "../../pages/NotFound";
+import NotFound from "../../pages/NotFound/NotFound";
 import MyReview from "../../pages/MyReview/MyReview";
 import ServiceDetails from "../../pages/ServiceDetails/ServiceDetails";
 import Services from "../../pages/Services/Services";
@@ -31,10 +31,6 @@ export const routes = createBrowserRouter([
       {
         path: "/services/:serviceId",
         element: <ServiceDetails></ServiceDetails>,
-        loader: ({ params }) =>
-          fetch(
-            `${process.env.REACT_APP_SERVER_BASEURL}/services/${params.serviceId}`
-          ),
       },
       {
         path: "/my-reviews",

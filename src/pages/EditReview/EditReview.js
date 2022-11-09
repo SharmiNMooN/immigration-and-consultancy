@@ -48,7 +48,7 @@ function EditReview(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form onSubmit={handleSubmit} className="w-50 w-sm-100">
+        <Form onSubmit={handleSubmit} className="w-60 w-sm-100">
           <>
             <FloatingLabel controlId="floatingTextarea2" label="Review">
               <Form.Control
