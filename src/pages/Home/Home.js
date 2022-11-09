@@ -14,33 +14,35 @@ const Home = () => {
       <Slider></Slider>
       <Row>
         <Col sx={12} sm={12} md={3} lg={3}>
-          <Card className="mb-5" border="warning">
+          <Card className="mb-5 mt-5" border="warning">
             <Card.Body>
               <Card.Title>Contact with me</Card.Title>
 
               <Card.Text>
                 Address: Mirpur 2, Dhaka 1216 <br /> Contact number: 000-111-222{" "}
                 <br />
-                Email Us: immigration@sharminmoon.com
+                Email Me: immigration@sharminmoon.com
                 <br />
-                Open hours: 9.30AM - 7.30PM
+                Available hours: 9.30AM - 7.30PM
                 <br />
                 Friday and Saturday(off)
               </Card.Text>
             </Card.Body>
           </Card>
         </Col>
-        <Col sx={12} sm={12} md={6} lg={6}>
-          <h3 className="text-center text-info fw-bolder">MY SERVICES</h3>
+        <Col className="mt-2" sx={12} sm={12} md={6} lg={6}>
+          <h3 className="text-center text-primary fw-bolder">MY SERVICES</h3>
           {AllServices.map((service, index) => (
             <Service key={index} service={service} isDetails={false}></Service>
           ))}
-          <Link className="btn btn-dark" to="/services">
-            See all services
-          </Link>
+          <div className="d-block text-center">
+            <Link className="btn btn-dark" to="/services">
+              See all services
+            </Link>
+          </div>
         </Col>
         <Col sx={12} sm={12} md={3} lg={3}>
-          <Card className="mb-5" border="warning">
+          <Card className="mb-5 mt-5" border="warning">
             <Card.Body>
               <Card.Title>About my service</Card.Title>
 

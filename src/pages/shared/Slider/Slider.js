@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+import MovingText from "react-moving-text";
 import Carousel from "react-bootstrap/Carousel";
 
 function Slider() {
@@ -10,7 +12,16 @@ function Slider() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>We are providing World travelling packages</h3>
+          <MovingText
+            className="h1 text-warning"
+            type="effect3D"
+            duration="1000ms"
+            timing="linear"
+            iteration="infinite"
+          >
+            I provide consultancy
+          </MovingText>
+          <h3> for World travelling packages</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -20,8 +31,17 @@ function Slider() {
           alt="Second slide"
         />
 
-        <Carousel.Caption className="">
-          <h3>We consult for Visa and immigration service</h3>
+        <Carousel.Caption>
+          <MovingText
+            className="h1 text-warning"
+            type="effect3D"
+            duration="1000ms"
+            timing="linear"
+            iteration="infinite"
+          >
+            I consult for Visa
+          </MovingText>
+          <h3> and immigration service</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -32,7 +52,16 @@ function Slider() {
         />
 
         <Carousel.Caption>
-          <h3>Student visa consultancy</h3>
+          <MovingText
+            className="h1 text-warning"
+            type="effect3D"
+            duration="1000ms"
+            timing="linear"
+            iteration="infinite"
+          >
+            I provide student visa
+          </MovingText>
+          <h3>consultancy</h3>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

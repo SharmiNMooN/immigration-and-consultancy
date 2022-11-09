@@ -76,7 +76,7 @@ const Services = () => {
             }}
             className="border-4 mt-2 border-light me-2"
           >
-            <FaArrowRight className="me-2 text-danger h1"></FaArrowRight>
+            <FaArrowRight className="me-2 text-primary h1"></FaArrowRight>
             Next
           </Button>
         ) : (

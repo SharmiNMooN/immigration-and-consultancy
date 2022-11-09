@@ -26,14 +26,14 @@ const Footer = () => {
                 <h5 className="text-center">Navigations</h5>
                 <Nav className="flex-column text-center">
                   <Nav.Link href="/services">Services</Nav.Link>
-                  <Nav.Link href="/blog">BLog</Nav.Link>
+                  <Nav.Link href="/blog">Blog</Nav.Link>
                 </Nav>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="footer-copyright text-center py-3">
+        <div className="footer-copyright text-white text-center py-3">
           © 2022 Copyright:
           <Nav.Link href="/home"> Immigration and Consultancy</Nav.Link>
         </div>
