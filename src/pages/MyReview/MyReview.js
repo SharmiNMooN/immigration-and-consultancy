@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row, Spinner } from "react-bootstrap";
 import toast from "react-hot-toast";
+import EditReview from "../EditReview/EditReview";
 import MyReviewCard from "../MyReviewCard/MyReviewCard";
 const MyReview = () => {
   document.title = "My Reviews";
   const [reviewes, setReviewes] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const token = localStorage.getItem("token");
+  const [modalShow, setModalShow] = useState(false);
+  const [reviewData, setReviewData] = useState({});
 
   async function getReviewByUser() {
     setIsLoading(true);
@@ -63,6 +66,12 @@ const MyReview = () => {
   }, []);
   return (
     <div>
+      <EditReview
+        show={modalShow}
+        review={reviewData}
+        getReviewByUser={getReviewByUser}
+        onHide={() => setModalShow(false)}
+      />
       {isLoading ? (
         <div className="text-center">
           <Spinner className="" animation="border" variant="danger" />
@@ -79,9 +88,11 @@ const MyReview = () => {
         ) : (
           reviewes?.map((review, index) => (
             <MyReviewCard
+              setReviewData={setReviewData}
               review={review}
               key={index}
               removeReview={removeReview}
+              setModalShow={setModalShow}
             ></MyReviewCard>
           ))
         )}

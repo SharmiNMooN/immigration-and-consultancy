@@ -2,7 +2,13 @@ import React from "react";
 import { Col, Image } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { FaEdit, FaStar, FaTrash } from "react-icons/fa";
-const MyReviewCard = ({ review, removeReview }) => {
+const MyReviewCard = ({
+  review,
+  removeReview,
+  setModalShow,
+  setReviewData,
+}) => {
+  console.log("review--------", review);
   return (
     <div>
       <Col className="m-auto" sx={12} sm={12} md={6} lg={6}>
@@ -20,13 +26,19 @@ const MyReviewCard = ({ review, removeReview }) => {
                   Reviewer: {review?.reviewerName}
                 </p>
                 <Card.Text className="fw-bold">
-                  Service: {review.serviceName}
+                  Service: {review?.serviceName}
                 </Card.Text>
               </div>
             </div>
 
             <div>
-              <FaEdit className="me-2 text-success"></FaEdit>
+              <FaEdit
+                className="me-2 text-success"
+                onClick={() => {
+                  setModalShow(true);
+                  setReviewData(review);
+                }}
+              ></FaEdit>
               <FaTrash
                 className="me-2 text-danger"
                 onClick={() => {
@@ -36,7 +48,7 @@ const MyReviewCard = ({ review, removeReview }) => {
             </div>
           </Card.Header>
           <Card.Body>
-            <Card.Text>Review: {review.description}</Card.Text>
+            <Card.Text>Review: {review?.description}</Card.Text>
             <div>
               Rating: <FaStar className="text-warning me-2"></FaStar>
               <span>{review?.rating || "N/A"}</span>
