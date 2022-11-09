@@ -45,18 +45,18 @@ const Home = () => {
               <Card.Title>About my service</Card.Title>
 
               <Card.Text>
-                Immigration and COnsultancy is an international consultancy
-                organization that enables Travellers to travel the world,
-                students to study abroad. Through Global Education & Immigration
-                , abroad prospective students can study in the UK, USA and
-                Canada. The professional staff at Global Education & Immigration
-                delivers reliable and resourceful information and answers to
-                students interested in studying abroad. The skilled and
-                well-trained counsellors of Global Education & Immigration are
-                devoted to giving different services and aid to the students
-                anytime they need it. They have real-life experience studying
-                overseas. Moreover, they get training from the specialists to be
-                up-to-date with their expertise.
+                I provides some services and consultancy that enables Travellers
+                to travel the world, students to study abroad. Through Global
+                Education & Immigration, abroad prospective students can study
+                in the UK, USA and Canada. The professional staff at Global
+                Education & Immigration delivers reliable and resourceful
+                information and answers to students interested in studying
+                abroad. The skilled and well-trained counsellors of Global
+                Education & Immigration are devoted to giving different services
+                and aid to the students anytime they need it. They have
+                real-life experience studying overseas. Moreover, they get
+                training from the specialists to be up-to-date with their
+                expertise.
               </Card.Text>
             </Card.Body>
           </Card>
