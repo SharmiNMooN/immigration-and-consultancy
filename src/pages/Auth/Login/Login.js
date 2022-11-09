@@ -6,7 +6,8 @@ import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import { GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { Spinner } from "react-bootstrap";
+import { Col, Image, Row, Spinner } from "react-bootstrap";
+import "./Login.css";
 
 const Login = () => {
   document.title = "Login";
@@ -140,8 +141,89 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-primary w-60 ">
-      <h1 className="text-center text-white">Sign In</h1>
+    <div className="login-bg w-60 m-4">
+      <h1 className="text-center ft-bolder text-white">Sign In</h1>
+
+      <Row>
+        <Col className="mb-5 mx-5 d-none d-sm-block">
+          <div>
+            <Image
+              height={400}
+              width={500}
+              roundedCircle
+              src="https://img.freepik.com/premium-vector/immigration-consultant-hand-drawn-illustration-counseling-assistance-provide-advice-people_2175-8005.jpg?w=2000"
+            ></Image>
+          </div>
+        </Col>
+        <Col>
+          <Form onSubmit={handleSubmit} className="w-50 w-sm-100 m-auto">
+            <Form.Group className="mb-4 text-white" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                name="email"
+                type="email"
+                className="border-4 border-dark"
+                placeholder="Enter email"
+                required
+              />
+            </Form.Group>
+
+            <Form.Group
+              className="mb-4 text-white"
+              controlId="formBasicPassword"
+            >
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                name="password"
+                type="password"
+                placeholder="Password"
+                className="border-4 border-dark"
+                required
+              />
+            </Form.Group>
+
+            <div className="">
+              <Button
+                variant="light"
+                className="border-4 border-dark me-2"
+                type="submit"
+              >
+                Login
+              </Button>
+
+              <Button
+                variant="dark"
+                className="border-4 border-light text-white"
+              >
+                <Link className="text-white" to="/register">
+                  Register
+                </Link>
+              </Button>
+              <Form.Text className="text-danger me-4">{error}</Form.Text>
+              <div className="text-center mt-3 ">
+                <h5 className="text-white fw-bolder">Social login</h5>
+                <ButtonGroup vertical>
+                  <Button
+                    onClick={handleGoogleSignIn}
+                    className=""
+                    variant="outline-light"
+                  >
+                    {" "}
+                    <FaGoogle></FaGoogle> Login with Google
+                  </Button>
+                  <Button
+                    onClick={handleGithubSignIn}
+                    variant="outline-light mb-4"
+                  >
+                    {" "}
+                    <FaGithub></FaGithub> Login with Github
+                  </Button>
+                </ButtonGroup>
+              </div>
+            </div>
+          </Form>
+        </Col>
+      </Row>
       {isLoading ? (
         <div className="text-center">
           <Spinner className="" animation="border" variant="danger" />
@@ -149,61 +231,6 @@ const Login = () => {
       ) : (
         ""
       )}
-      <Form onSubmit={handleSubmit} className="w-50 w-sm-100 m-auto">
-        <Form.Group className="mb-4 text-white" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            name="email"
-            type="email"
-            className="border-4 border-dark"
-            placeholder="Enter email"
-            required
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-4 text-white" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            name="password"
-            type="password"
-            placeholder="Password"
-            className="border-4 border-dark"
-            required
-          />
-        </Form.Group>
-
-        <div className="">
-          <Button
-            variant="light"
-            className="border-4 border-dark me-2"
-            type="submit"
-          >
-            Login
-          </Button>
-
-          <Button variant="warning" className="border-4 border-dark">
-            <Link to="/register">Register</Link>
-          </Button>
-          <Form.Text className="text-danger me-4">{error}</Form.Text>
-        </div>
-      </Form>
-      <div className="text-center">
-        <h5 className="text-white">Social login</h5>
-        <ButtonGroup vertical>
-          <Button
-            onClick={handleGoogleSignIn}
-            className=""
-            variant="outline-light"
-          >
-            {" "}
-            <FaGoogle></FaGoogle> Login with Google
-          </Button>
-          <Button onClick={handleGithubSignIn} variant="outline-light mb-4">
-            {" "}
-            <FaGithub></FaGithub> Login with Github
-          </Button>
-        </ButtonGroup>
-      </div>
     </div>
   );
 };
