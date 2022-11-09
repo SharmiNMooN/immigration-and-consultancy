@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
-import { Container, Spinner } from "react-bootstrap";
+import { Col, Container, Image, Row, Spinner } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
+import "./Register.css";
 
 const Register = () => {
   document.title = "Registration";
@@ -82,92 +83,109 @@ const Register = () => {
   };
 
   return (
-    <Container className="w-60 bg-primary">
-      <Form onSubmit={handleSubmit} className="w-50 m-auto">
-        <p className="text-center fw-bold text-white h1 mb-5 mx-1 mx-md-4 mt-4">
-          Sign up
-        </p>
-        {isLoading ? (
-          <div className="text-center">
-            <Spinner className="" animation="border" variant="danger" />
+    <Container className="w-60 register-bg">
+      <Row>
+        <Col className="d-none d-sm-block m-auto">
+          <div>
+            <Image
+              height={400}
+              width={500}
+              roundedCircle
+              src="https://img.freepik.com/premium-vector/immigration-template-hand-drawn-cartoon-flat-illustration-document-with-visa-passport_2175-7964.jpg?w=2000"
+            ></Image>
           </div>
-        ) : (
-          ""
-        )}
-        <Form.Group className="text-white my-4 " controlId="formBasicEmail">
-          <Form.Label>Your Full Name</Form.Label>
-          <Form.Control
-            name="name"
-            type="text"
-            className="border-4 border-dark"
-            placeholder="Your Full Name"
-          />
-        </Form.Group>
-        <Form.Group className="text-white my-4" controlId="formBasicEmail">
-          <Form.Label>Photo URL</Form.Label>
-          <Form.Control
-            name="photoURL"
-            type="text"
-            className="border-4 border-dark"
-            placeholder="Phot URL"
-          />
-        </Form.Group>
+        </Col>
+        <Col>
+          <Form onSubmit={handleSubmit} className="w-50 w-sm-100 m-auto">
+            <p className="text-center fw-bold text-white h1 mb-5 mx-1 mx-md-4 mt-4">
+              Sign up
+            </p>
+            {isLoading ? (
+              <div className="text-center">
+                <Spinner className="" animation="border" variant="danger" />
+              </div>
+            ) : (
+              ""
+            )}
+            <Form.Group className="text-white my-4 " controlId="formBasicEmail">
+              <Form.Label>Your Full Name</Form.Label>
+              <Form.Control
+                name="name"
+                type="text"
+                className="border-4 border-dark"
+                placeholder="Your Full Name"
+              />
+            </Form.Group>
+            <Form.Group className="text-white my-4" controlId="formBasicEmail">
+              <Form.Label>Photo URL</Form.Label>
+              <Form.Control
+                name="photoURL"
+                type="text"
+                className="border-4 border-dark"
+                placeholder="Phot URL"
+              />
+            </Form.Group>
 
-        <Form.Group className="text-white my-4" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            name="email"
-            className="border-4 border-dark"
-            type="email"
-            placeholder="Enter email"
-            required
-          />
-        </Form.Group>
+            <Form.Group className="text-white my-4" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                name="email"
+                className="border-4 border-dark"
+                type="email"
+                placeholder="Enter email"
+                required
+              />
+            </Form.Group>
 
-        <Form.Group className="text-white my-4" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            name="password"
-            type="password"
-            className="border-4 border-dark"
-            placeholder="Password"
-            required
-          />
-        </Form.Group>
-        <Form.Group
-          className="text-white d-flex "
-          controlId="formBasicCheckbox"
-        >
-          <Form.Check
-            type="checkbox"
-            onClick={handleAccepted}
-            label={
-              <>
-                I agree all statements in{" "}
-                <Link to="/terms" className="text-dark">
-                  {" "}
-                  Terms of service
-                </Link>
-              </>
-            }
-          />
-        </Form.Group>
-        <Button
-          className="mb-4 mt-2 me-2 align-item-start"
-          variant="light"
-          type="submit"
-          disabled={!accepted}
-        >
-          Register
-        </Button>
+            <Form.Group
+              className="text-white my-4"
+              controlId="formBasicPassword"
+            >
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                name="password"
+                type="password"
+                className="border-4 border-dark"
+                placeholder="Password"
+                required
+              />
+            </Form.Group>
+            <Form.Group
+              className="text-white d-flex "
+              controlId="formBasicCheckbox"
+            >
+              <Form.Check
+                type="checkbox"
+                onClick={handleAccepted}
+                label={
+                  <>
+                    I agree all statements in{" "}
+                    <Link to="/terms" className="text-dark">
+                      {" "}
+                      Terms of service
+                    </Link>
+                  </>
+                }
+              />
+            </Form.Group>
+            <Button
+              className="mb-4 mt-2 me-2 align-item-start"
+              variant="light"
+              type="submit"
+              disabled={!accepted}
+            >
+              Register
+            </Button>
 
-        <Button className="mb-4 mt-2 align-item-end" variant="warning">
-          <Link to="/login">Login</Link>
-        </Button>
-        <Form.Text className=" mb-4 text-danger align-item-center me-2">
-          {error}
-        </Form.Text>
-      </Form>
+            <Button className="mb-4 mt-2 align-item-end" variant="warning">
+              <Link to="/login">Login</Link>
+            </Button>
+            <Form.Text className=" mb-4 text-danger align-item-center me-2">
+              {error}
+            </Form.Text>
+          </Form>
+        </Col>
+      </Row>
     </Container>
   );
 };

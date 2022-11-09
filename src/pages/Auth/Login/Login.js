@@ -142,10 +142,8 @@ const Login = () => {
 
   return (
     <div className="login-bg w-60 m-4">
-      <h1 className="text-center ft-bolder text-white">Sign In</h1>
-
       <Row>
-        <Col className="mb-5 mx-5 d-none d-sm-block">
+        <Col className="mt-2 mx-5 d-none d-sm-block">
           <div>
             <Image
               height={400}
@@ -156,6 +154,8 @@ const Login = () => {
           </div>
         </Col>
         <Col>
+          <h1 className="text-center ft-bolder text-white">Sign In</h1>
+
           <Form onSubmit={handleSubmit} className="w-50 w-sm-100 m-auto">
             <Form.Group className="mb-4 text-white" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
