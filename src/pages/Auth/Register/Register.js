@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import toast from "react-hot-toast";
@@ -11,9 +11,11 @@ const Register = () => {
 
   const [error, setError] = useState("");
   const [accepted, setAccepted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { createUser, updateUserProfile } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
+    setIsLoading(true);
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
@@ -50,11 +52,17 @@ const Register = () => {
           .catch((error) => {
             console.log(error);
             setError(error.message);
+          })
+          .finally(() => {
+            setIsLoading(false);
           });
       })
       .catch((e) => {
         console.error(e);
         setError(e.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
@@ -79,6 +87,13 @@ const Register = () => {
         <p className="text-center fw-bold text-white h1 mb-5 mx-1 mx-md-4 mt-4">
           Sign up
         </p>
+        {isLoading ? (
+          <div className="text-center">
+            <Spinner className="" animation="border" variant="warning" />
+          </div>
+        ) : (
+          ""
+        )}
         <Form.Group className="text-white my-4 " controlId="formBasicEmail">
           <Form.Label>Your Full Name</Form.Label>
           <Form.Control
