@@ -51,7 +51,7 @@ const AddService = () => {
       <h5 className="text-center">Add New Service </h5>
       {isLoading ? (
         <div className="text-center">
-          <Spinner className="" animation="border" variant="warning" />
+          <Spinner className="" animation="border" variant="danger" />
         </div>
       ) : (
         ""

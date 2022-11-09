@@ -89,7 +89,7 @@ const Register = () => {
         </p>
         {isLoading ? (
           <div className="text-center">
-            <Spinner className="" animation="border" variant="warning" />
+            <Spinner className="" animation="border" variant="danger" />
           </div>
         ) : (
           ""

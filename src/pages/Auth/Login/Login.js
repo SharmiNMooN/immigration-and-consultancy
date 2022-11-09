@@ -144,7 +144,7 @@ const Login = () => {
       <h1 className="text-center text-white">Sign In</h1>
       {isLoading ? (
         <div className="text-center">
-          <Spinner className="" animation="border" variant="warning" />
+          <Spinner className="" animation="border" variant="danger" />
         </div>
       ) : (
         ""
