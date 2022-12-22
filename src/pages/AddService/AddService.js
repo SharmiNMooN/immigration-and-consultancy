@@ -100,11 +100,10 @@ const AddService = () => {
         </Form.Group>
 
         <Button
-          variant="danger"
-          className="border-4 mt-2 border-light me-2"
+          className="border-4 mt-2 border-light me-2 btn-color"
           type="submit"
         >
-          Submit Review
+          Add service
         </Button>
         <Form.Text className="text-danger me-4">{error}</Form.Text>
       </Form>

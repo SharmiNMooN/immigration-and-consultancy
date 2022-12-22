@@ -11,6 +11,19 @@ body {
   height: 40vmin;
   pointer-events: none;
 }
+.btn-color {
+  background-color: #78b2d4 !important;
+  color: white !important;
+}
+
+.brand-color {
+  color: #78b2d4 !important;
+}
+.nav-pills {
+  --bs-nav-pills-border-radius: 0.375rem !important;
+  --bs-nav-pills-link-active-color: #fff !important;
+  --bs-nav-pills-link-active-bg: #78b2d4 !important;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

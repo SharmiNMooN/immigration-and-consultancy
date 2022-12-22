@@ -31,11 +31,13 @@ const Header = () => {
       variant="light"
     >
       <Container>
-        <Navbar.Brand>
-          <Link className="me-3" to="/">
+        <Navbar.Brand className="brand-color">
+          <Link className="me-3 brand-color" to="/">
             {<FaFlagCheckered size={30}></FaFlagCheckered>}
           </Link>
-          <Link to="/">Immigration and Consultancy</Link>
+          <Link className="brand-color fw-bold" to="/">
+            Immigration and Consultancy
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

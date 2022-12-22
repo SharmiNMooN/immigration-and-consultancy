@@ -14,7 +14,7 @@ const Home = () => {
       <Slider></Slider>
       <Row>
         <Col sx={12} sm={12} md={3} lg={3}>
-          <Card className="mb-5 mt-5" border="warning">
+          <Card className="mb-5 mt-5">
             <Card.Body>
               <Card.Title>Contact with me</Card.Title>
 
@@ -42,7 +42,7 @@ const Home = () => {
           </div>
         </Col>
         <Col sx={12} sm={12} md={3} lg={3}>
-          <Card className="mb-5 mt-5" border="warning">
+          <Card className="mb-5 mt-5">
             <Card.Body>
               <Card.Title>About my service</Card.Title>
 

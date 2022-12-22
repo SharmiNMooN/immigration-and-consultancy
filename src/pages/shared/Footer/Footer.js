@@ -34,8 +34,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-copyright text-white text-center py-3">
-          © 2022 Copyright:
-          <Nav.Link href="/home"> Immigration and Consultancy</Nav.Link>
+          ©2022 Copyright: <Nav.Link href="/home"> Immigration and Consultancy</Nav.Link>
         </div>
       </footer>
     </div>

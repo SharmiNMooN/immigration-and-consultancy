@@ -52,8 +52,7 @@ const AddReview = ({ serviceId, getServiceDetails }) => {
         </>
 
         <Button
-          variant="danger"
-          className="border-4 mt-2 border-light me-2"
+          className="border-4 mt-2 border-light me-2 btn-color"
           type="submit"
         >
           Submit Review

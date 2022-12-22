@@ -7,7 +7,7 @@ import { Col } from "react-bootstrap";
 const Service = ({ service, isDetails = false }) => {
   return (
     <Col sx={12} sm={12} md={12} lg={12}>
-      <Card className="mb-2" border="warning">
+      <Card className="mb-2">
         <Card.Body>
           <Card.Title>{service.name}</Card.Title>
           <PhotoProvider>
@@ -31,7 +31,7 @@ const Service = ({ service, isDetails = false }) => {
             )}
           </Card.Text>
           {isDetails === true ? (
-            <Link className="btn btn-warning" to={`/services/${service._id}`}>
+            <Link className="btn btn-color" to={`/services/${service._id}`}>
               View details
             </Link>
           ) : (

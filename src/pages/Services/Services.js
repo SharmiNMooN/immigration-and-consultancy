@@ -35,7 +35,7 @@ const Services = () => {
   return (
     <div>
       <Row>
-        <h3 className="text-center text-info fw-bolder">MY SERVICES</h3>
+        <h3 className="text-center title fw-bolder">MY SERVICES</h3>
         {isLoading ? (
           <div className="text-center">
             <Spinner className="" animation="border" variant="danger" />

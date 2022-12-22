@@ -130,6 +130,31 @@ const Login = () => {
         form.reset();
         setError("");
         navigate(from, { replace: true });
+          const payload = {
+              email: email,
+          };
+          fetch(`${process.env.REACT_APP_SERVER_BASEURL}/users/login`, {
+              method: "POST",
+              headers: {
+                  "content-type": "application/json",
+              },
+              body: JSON.stringify(payload),
+          })
+              .then((res) => res.json())
+              .then((data) => {
+                  setIsLoading(false);
+                  console.log("logged in successfully.........", data);
+                  if (data.success) {
+                      localStorage.setItem("token", data.data.token);
+                      navigate(from, { replace: true });
+                  } else {
+                      console.log("Token not fetched...");
+                  }
+              })
+              .catch((error) => console.log(error))
+              .finally(() => {
+                  setIsLoading(false);
+              });
       })
       .catch((error) => {
         console.error(error);
